@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function dashboard()
-    {
-        return view("backend.content.dashboard");
+    { 
+        $title='Dashboard';
+        return view("backend.content.dashboard",compact('title'));
     }
 }

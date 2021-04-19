@@ -10,8 +10,9 @@ class AdminController extends Controller
 {
     public function admin()
     {
+        $title='Admin';
         $admin=Admin::all();
-        return view("backend.content.admin", compact("admin"));
+        return view("backend.content.admin", compact('admin','title'));
     }
 
     public function create(Request $request)
@@ -20,14 +21,14 @@ class AdminController extends Controller
            'name'=>$request->name,
            'address'=>$request->address
        ]);
-       return redirect()->back()->with('success','Admin created suucesfully.');
+       return redirect()->back()->with('success','Admin created successfully.');
     }
 
     // delete method
     public function delete($id){
         $admin=admin::find($id);
         $admin->delete();
-        return redirect()->back()->with('success','Admin deleted sucessfully.');
+        return redirect()->back()->with('success','Admin deleted successfully.');
     }
 }
 

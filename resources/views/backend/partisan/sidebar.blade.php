@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+      <nav class="col-md-2 d-none d-md-block bg-success sidebar">
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
 
@@ -19,19 +19,19 @@
               </a>
             </li>
             <li class="nav-item p-2">
-              <a class="nav-link active text-white" href="{{route('user')}}">
+              <a class="nav-link active text-white" href="{{route('client')}}">
                 <span data-feather="layers"></span>
-                User
+                Client
               </a>
             </li>
             <li class="nav-item p-2">
-                <a class="nav-link active text-white" href="#">
+                <a class="nav-link active text-white" href="{{route('guard')}}">
                   <span data-feather="layers"></span>
                   Security Gaurd
                 </a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link active text-white" href="#">
+                <a class="nav-link active text-white" href="{{route('payment')}}">
                   <span data-feather="layers"></span>
                   Payment
                 </a>

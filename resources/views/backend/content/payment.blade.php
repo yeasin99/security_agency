@@ -1,6 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-<p>oi hiiiiiiii</p>
+<h1>sabbir er pasa muda</h1>
+
 
 @endsection
