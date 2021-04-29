@@ -24,7 +24,8 @@
     <link href="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.css" rel="stylesheet">
 </head>
 
-<body >
+{{-- <body style="background-image:url('{{asset('image/anik.jpg')}}');background-repeat:no-repeat;background-size:100% 100%; background-attachment: fixed;">
+    > --}}
   
   
   @include('backend.partisan.header')

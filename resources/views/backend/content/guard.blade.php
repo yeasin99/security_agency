@@ -17,7 +17,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
     
-          <form method="post" action={{route('guard.create')}}>
+          <form method="post" action={{route('guard.create')}} enctype="multipart/form-data">
     
             @csrf
     
@@ -52,27 +52,39 @@
       <input name="age" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter Your Email Address">
     </div>
     <div class="form-group">
+      <label for="exampleInputDescription"> Salary</label>
+      <input name="salary" type="number" class="form-control" id="exampleInputDescription" placeholder="Enter guard salary">
+    </div>
+    
+
+    {{-- relational --}}
+    <div class="form-group">
+      <label for="exampleInputDescription">Category</label>
+      <select name="category_id" id="" type="text" class="form-control">
+          @foreach ($category as $item)
+
+          <option value="{{$item->id}}"> {{$item->name}} </option>
+
+          @endforeach
+      </select>
+  </div>
+
+    <div class="form-group">
         <label for="exampleInputDescription"> Image </label>
         <input name="image" type="file" class="form-control" id="exampleInputDescription" placeholder="Enter Your Email Address">
       
       </div>
-
+    </div>
+      <div class="modal-footer">
+           
+        <button type="summit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
   </div>
 </div>
 
-          </div>
-    
-    
-           
-          <div class="modal-footer">
-           
-            <button type="summit" class="btn btn-primary">Save</button>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-    
+</div>
+
     
     
      {{-- for successfull masage --}}
@@ -92,6 +104,8 @@
           <th scope="col">NID</th>
           <th scope="col">Email</th>
           <th scope="col">Age</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Category</th>
           <th scope="col">Image</th>
           <th scope="col">Action</th>
           
@@ -108,11 +122,15 @@
         <td>{{$data->nid}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->age}}</td>
+        <td>{{$data->salary}}</td>
+        <td>{{$data->category_id}}</td>
         <td>
           <img style="width:120px;" src="{{url('files/photo/'.$data->image)}}"alt="Product Image" style="height:80px">
       </td>
         <td>
-            <a class="btn btn-warning" href="">Edit </a>
+            <a class="btn btn-primary" href="">View </a>
+           
+            <a class="btn btn-success" href="{{route('guard.edit',$data->id)}}">Edit</a>
             <a class="btn btn-danger" href="{{route('guard.delete',$data['id'])}}">Delete </a>
         </td>
       </tr>
@@ -121,8 +139,8 @@
     </tbody>
     </table>
 
-
-
+{{-- 
+    {{$guard->links()}} --}}
 
 
 

@@ -31,13 +31,25 @@
                 </a>
               </li>
               <li class="nav-item p-2">
+                <a class="nav-link active text-white" href="{{route('category')}}">
+                  <span data-feather="layers"></span>
+                  Categories
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link active text-white" href="{{route('order')}}">
+                  <span data-feather="layers"></span>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item p-2">
                 <a class="nav-link active text-white" href="{{route('payment')}}">
                   <span data-feather="layers"></span>
                   Payment
                 </a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link active text-white" href="#">
+                <a class="nav-link active text-white" href="{{route('report')}}">
                   <span data-feather="layers"></span>
                   Reports
                 </a>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<!-- Button trigger modal -->
+{{-- <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Admin
   </button>
@@ -76,6 +76,7 @@
       @endforeach
 
     </tbody>
-  </table>
+  {{-- </table> --}}
+  {{-- --}} 
 
 @endsection

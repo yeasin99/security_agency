@@ -26,8 +26,13 @@ class UsersController extends Controller
         //authenticate
         $credentials = $request->only('email', 'password');
 //        dd($credentials);
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            if(auth()->user()->role == 'user'){
+                //auth()->logout();
+                return redirect()->route('homepage');
+            }
             return redirect()->route('dashboard');
         }
         return back()->withErrors([

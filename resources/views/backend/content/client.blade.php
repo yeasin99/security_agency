@@ -94,7 +94,7 @@ Register
     <td>{{$data->nid}}</td>
     <td>{{$data->email}}</td>
     <td>
-        <a class="btn btn-warning" href="">Edit </a>
+      <a class="btn btn-warning" href="{{route('client.edit',$data->id)}}">Edit </a>
         <a class="btn btn-danger" href="{{route('client.delete',$data['id'])}}">Delete </a>
     </td>
   </tr>
