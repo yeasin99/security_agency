@@ -2,6 +2,11 @@
 
 @section('content')
 
+@if(session()->has('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div>
+@endif
 
 <div class="album py-5 bg-light">
     <div class="container">
@@ -39,6 +44,7 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                {{-- <a class="btn btn-primary" href="{{route('payment.guard',$guard->id)}}">Submit</a> --}}
             </div>
 
         </div>

@@ -61,7 +61,7 @@
     <div class="form-group">
       <label for="exampleInputDescription">Category</label>
       <select name="category_id" id="" type="text" class="form-control">
-          @foreach ($category as $item)
+          @foreach ($categories as $item)
 
           <option value="{{$item->id}}"> {{$item->name}} </option>
 
@@ -93,6 +93,28 @@
        {{session()->get('success')}} 
      </div>
      @endif
+     <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+
+
+
+      <div class="col-md-4">
+          <form action="{{route('guard.search')}}" method="POST">
+              @csrf
+          <input name="search" type="text" placeholder="Search" class="form-control">
+          <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+      </div>
+
+  </div>
+
+  @if(isset($search))
+      <p>
+      <span class="alert alert-success"> you are searching for '{{$search}}' , found ({{count($guard)}})</span>
+      </p>
+  @endif
+
     
     <table class="table">
       <thead>
@@ -128,9 +150,9 @@
           <img style="width:120px;" src="{{url('files/photo/'.$data->image)}}"alt="Product Image" style="height:80px">
       </td>
         <td>
-            <a class="btn btn-primary" href="">View </a>
+            {{-- <a class="btn btn-primary" href="">View </a> --}}
            
-            <a class="btn btn-success" href="{{route('guard.edit',$data->id)}}">Edit</a>
+            <a class="btn btn-success" href="{{route('guard.edit',$data['id'])}}">Edit</a>
             <a class="btn btn-danger" href="{{route('guard.delete',$data['id'])}}">Delete </a>
         </td>
       </tr>
@@ -139,8 +161,8 @@
     </tbody>
     </table>
 
-{{-- 
-    {{$guard->links()}} --}}
+
+    {{$guard->links()}} 
 
 
 

@@ -12,7 +12,7 @@ class GuardController extends Controller
    public function guard()
    {   
        $title='Guard details';
-       $guard=Guard::all();
+       $guard=Guard::paginate(2);
        $category=Category::all();
        return view ("backend.content.guard",compact('category','guard','title'));
    }
@@ -94,5 +94,26 @@ class GuardController extends Controller
            'category_id'=>$request->category_id,
         ]);
         return redirect()->route('guard')->with('success','Guard Updated Successfully.');
+    }
+
+
+    // search
+    public function search(Request $request)
+    {
+        $categories=Category::all();
+        $search=$request->search;
+        if($search){
+            $guard=Guard::where('name','like','%'.$search.'%')->paginate();
+                            // ->orWhere('price','like','%'.$search.'%')->paginate(5);
+        }else
+        {
+
+            $guard=Guard::paginate(5);
+        }
+
+        // where(name=%search%)
+        $title="Search result";
+        // $category=Category::all();
+        return view('backend.content.guard',compact('title','guard','search','categories'));
     }
 }

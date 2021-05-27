@@ -88,11 +88,11 @@ Register
 
   <tr>
     <th scope="row">{{$key+1}}</th>
-    <td>{{$data->name}}</td>
+    <td>{{$data->clientUser->name}}</td>
     <td>{{$data->address}}</td>
     <td>{{$data->contact}}</td>
     <td>{{$data->nid}}</td>
-    <td>{{$data->email}}</td>
+    <td>{{$data->clientUser->email}}</td>
     <td>
       <a class="btn btn-warning" href="{{route('client.edit',$data->id)}}">Edit </a>
         <a class="btn btn-danger" href="{{route('client.delete',$data['id'])}}">Delete </a>

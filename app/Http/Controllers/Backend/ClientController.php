@@ -12,7 +12,8 @@ class ClientController extends Controller
 {
     public function client(){
         $title='Client Details';
-        $client=Client::all();
+        $client=Client::with('clientUser')->get();
+        // dd($client);
         return view ("backend.content.client",compact('client','title'));
     }
 

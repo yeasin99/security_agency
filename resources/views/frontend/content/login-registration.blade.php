@@ -50,8 +50,21 @@
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input name="password" required type="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputEmail1" class="form-label">Password</label>
+                <input name="password" required type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your password with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">address</label>
+                <input name="address" required type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">contact</label>
+                <input name="contact" required type="number" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">NID no</label>
+                <input name="nid" required type="text" class="form-control" id="exampleInputPassword1">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

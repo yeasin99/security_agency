@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+{{-- @dd($guard) --}}
     <form method="post" action={{route('guard.update',$guard->id)}} enctype="multipart/form-data">
     
         @csrf
