@@ -38,6 +38,7 @@ use App\Http\Controllers\Frontend\ProfileController;
 Route::get('/login-registration', [UserController::class, 'showLoginRegistration'])->name('login.registration.form');
 Route::post('/registration', [UserController::class, 'registration'])->name('registration');
 Route::post('/login', [UserController::class, 'login'])->name('user.login');
+Route::get('/reg', [UserController::class, 'reg'])->name('reg');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
@@ -151,6 +152,8 @@ Route::group(['middleware' => 'admin'], function () {
 
      // route for payment
      Route::get('/payment/status/{id}', [PaymentController::class, 'statusUpdate'])->name('statusUpdate');
+      // route for payment
+      Route::get('/payment/status/cancel/{id}', [PaymentController::class, 'statusCancel'])->name('statusCancel');
 
 
 

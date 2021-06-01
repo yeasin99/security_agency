@@ -64,7 +64,7 @@ class BookingController extends Controller
                 Mail::to(auth()->user()->email)->send(new confirmationmail($add));
                 return redirect()->route('homepage')->with('success', 'Booking created Successfully');
             } else {
-                return redirect()->route('show.guard', $request->guard_id)->with('success', 'Already Booked.');
+                return redirect()->route('show.guard', $request->guard_id)->with('success', 'Already booked fot this time schedule,Try another');
             }
     }
 

@@ -28,7 +28,7 @@
           <td>{{$data->amount}}</td>
           <td>
               <a class="btn btn-success" href="{{route('statusUpdate',$data->booking_id)}}">Confirm </a>
-              <a class="btn btn-danger" href="">Cancel </a>
+              <a class="btn btn-danger" href="{{route('statusCancel',$data->booking_id)}}">Cancel </a>
           </td>
         </tr>
         @endforeach

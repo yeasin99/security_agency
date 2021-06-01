@@ -12,10 +12,10 @@ Register
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      {{-- <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add information</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+      </div> --}}
 
       <form method="post" action={{route('client.create')}}>
 
@@ -94,8 +94,8 @@ Register
     <td>{{$data->nid}}</td>
     <td>{{$data->clientUser->email}}</td>
     <td>
-      <a class="btn btn-warning" href="{{route('client.edit',$data->id)}}">Edit </a>
-        <a class="btn btn-danger" href="{{route('client.delete',$data['id'])}}">Delete </a>
+      {{-- <a class="btn btn-warning" href="{{route('client.edit',$data->id)}}">Edit </a> --}}
+        {{-- <a class="btn btn-danger" href="{{route('client.delete',$data['id'])}}">Delete </a> --}}
     </td>
   </tr>
   @endforeach

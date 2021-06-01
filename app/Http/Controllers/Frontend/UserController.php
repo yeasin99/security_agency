@@ -18,9 +18,13 @@ class UserController extends Controller
         return view('frontend.content.login-registration');
     }
 
+    public function reg()
+    {
+        return view('frontend.content.registration');
+    }
     public function registration(Request $request)
     {
-
+// dd($request->all());
         $request->validate([
            'name'=>'required',
            'email'=>'email|required|unique:users',

@@ -39,7 +39,7 @@
               <li class="nav-item p-2">
                 <a class="nav-link active text-white" href="{{route('order')}}">
                   <span data-feather="layers"></span>
-                  Orders
+                  Bookings
                 </a>
               </li>
               <li class="nav-item p-2">

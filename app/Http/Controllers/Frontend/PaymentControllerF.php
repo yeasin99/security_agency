@@ -55,7 +55,7 @@ class PaymentControllerF extends Controller
         'payment_method'=>$request->input('payment_method')
         ]);
 
-        return redirect()->route('homepage');
+        return redirect()->route('homepage')->with('success', 'Payment successful,wait for the confirmation');
     }
 
 }

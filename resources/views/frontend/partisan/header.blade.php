@@ -28,9 +28,9 @@
            {{-- {{auth()->user()->name}} --}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('profile.show')}}"><i class="fas fa-user-alt ms-5"></i></a>
-             <a class="dropdown-item" href="{{route('logout')}}"> <i class="fas fa-sign-out-alt ms-5"></i></a>
-             <a class="dropdown-item" href="#"> <i class="fas fa-cart-plus ms-5"></i></a>
+              <a class="dropdown-item" href="{{route('profile.show')}}">Profile<i class="fas fa-user-alt ms-5"></i></a>
+             <a class="dropdown-item" href="{{route('logout')}}">Log Out <i class="fas fa-sign-out-alt ms-5"></i></a>
+             
 
 
             </div>

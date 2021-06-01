@@ -17,8 +17,10 @@
         <p class="text-muted fw-bolder"> Age  {{$data->age}} </p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <a href="{{route('show.guard',$data->id)}}" class="btn btn-sm btn-warning">Book Now</a>
-            <a href="{{route('product.show',$data->id)}}" class="btn btn-sm btn-warning">View</a>
+            <a  class="btn btn-sm btn-warning" href="{{ route('showGuard.book', $data->id) }}">
+              View
+            </a>
+            
         </div>
           <small class="text-muted fw-bolder">{{$data->price}}</small>
         </div>
