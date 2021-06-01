@@ -16,6 +16,7 @@
           </tr>
     </thead>
     <tbody>
+      {{-- @dd($payment) --}}
         @foreach ($payment as $key=> $data)
 
         <tr>
@@ -26,7 +27,7 @@
           <td>{{$data->transaction_id}}</td>
           <td>{{$data->amount}}</td>
           <td>
-              <a class="btn btn-success" href="">Confirm </a>
+              <a class="btn btn-success" href="{{route('statusUpdate',$data->booking_id)}}">Confirm </a>
               <a class="btn btn-danger" href="">Cancel </a>
           </td>
         </tr>

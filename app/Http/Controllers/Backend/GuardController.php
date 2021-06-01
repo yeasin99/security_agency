@@ -52,6 +52,7 @@ class GuardController extends Controller
         'nid'=>$request->nid,
         'email'=>$request->email,
         'age'=>$request->age,
+        'experience'=>$request->experience,
         'salary'=>$request->salary,
         'category_id'=>$request->category_id,
         'image'=>$file_name
@@ -74,7 +75,6 @@ class GuardController extends Controller
     {
        //get all data of for this id
         $guard=Guard::find($id);
-        $guard=Guard::paginate(5);
         $categories=Category::all();
         //pass data to a view
         return view('backend.content.guard.edit',compact('guard','categories'));

@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\PaymentControllerF;
 use App\Http\Controllers\Frontend\ProfileController;
 
 
@@ -33,10 +35,9 @@ use App\Http\Controllers\Frontend\ProfileController;
 
 // route for frontend
 
-Route::get('/homepage', [HomePageController::class, 'homepage'])->name('homepage');
 Route::get('/login-registration', [UserController::class, 'showLoginRegistration'])->name('login.registration.form');
 Route::post('/registration', [UserController::class, 'registration'])->name('registration');
-Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('user.login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
@@ -44,24 +45,31 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/login', [UsersController::class, 'login'])->name('login');
 Route::post('/do-login', [UsersController::class, 'doLogin'])->name('admin.doLogin');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'customer-auth'], function () {
+    Route::get('/homepage', [HomePageController::class, 'homepage'])->name('homepage');
 
-    Route::post('/payment', [PaymentController::class, 'create'])->name('payment.create');
 
+    // Route::post('/payment', [PaymentController::class, 'create'])->name('payment.create');
+   
 
     //single product view
     Route::get('/show/product/{product_id}', [ProductController::class, 'showProduct'])->name('product.show');
     Route::get('/product/under/category/{category_id}', [ProductController::class, 'guardsUnderCategory'])->name('product.under.category');
 
 
-
+//addd to cart
+Route::get('carts',[CartController::class,'cart'])->name('carts');
 
 
     // booking route
     // Route::group(['middleware' => 'auth'], function () {
     Route::get('/show/guard/{id}', [BookingController::class, 'showGuard'])->name('show.guard');
+    Route::get('/show/guard/show/{id}', [BookingController::class, 'showGuardBooking'])->name('showGuard.book');
     Route::post('/booking', [BookingController::class, 'booking'])->name('guard.booking');
     Route::get('/show/guard/payment/{id}', [BookingController::class, 'guardPayment'])->name('payment.guard');
+    Route::get('/user/payment', [PaymentControllerF::class, 'userPayment'])->name('userPayment');
+    Route::post('/user/payment/create', [PaymentControllerF::class, 'payPayment'])->name('payPayment');
+   
     // });
 
 
@@ -140,6 +148,9 @@ Route::group(['middleware' => 'admin'], function () {
 
     // route for payment
     Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
+
+     // route for payment
+     Route::get('/payment/status/{id}', [PaymentController::class, 'statusUpdate'])->name('statusUpdate');
 
 
 

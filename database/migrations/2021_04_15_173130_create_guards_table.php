@@ -21,6 +21,7 @@ class CreateGuardsTable extends Migration
             $table->string('nid',120);
             $table->string('email')->unique();
             $table->text('age',20);
+            $table->text('experience');
             $table->string('salary',20);
             $table->string('category_id');
             $table->text('image')->nullable();

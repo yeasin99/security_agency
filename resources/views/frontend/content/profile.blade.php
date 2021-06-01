@@ -43,11 +43,12 @@
                       <th scope="col">Booking From</th>
                       <th scope="col">Booking To</th>
                       <th scope="col">Total Payment</th>
+                      <th scope="col">Status</th>
                       
                     </tr>
                   </thead>
                   <tbody>
-                          @foreach ($guard as $key=>$data )
+                          @foreach ($bookings as $key=>$data )
               
               
                         <tr class='fw-bolder style="color:black'>
@@ -58,16 +59,23 @@
                           <td>{{$data->booking_from}}</td>
                           <td>{{$data->booking_to}}</td>
                           <td>{{$data->total}}</td>
+                          <td>{{$data->status}}</td>
                       
               
                         </tr>
               
                    
                         @endforeach
+
+                        <td colspan="7" class="text-center">Sub-Total : {{$sub_total}}</td>
               
               
               
                   </tbody>
                 </table>
+
+                <div >
+                  <a class="btn btn-primary " href="{{route('userPayment')}}">Payment</a>
+                </div>
 @endsection
 

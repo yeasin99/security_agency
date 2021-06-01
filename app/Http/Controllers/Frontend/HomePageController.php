@@ -12,6 +12,7 @@ class HomePageController extends Controller
     public function homepage()
     {
         $guard=Guard::all();
+        // dd($guard);
         // $categories=Category::all();
         return view('frontend.content.guardview',compact('guard'));
     }

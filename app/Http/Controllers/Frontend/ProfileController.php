@@ -10,8 +10,29 @@ class ProfileController extends Controller
 {
     public function showProfile()
     {
+        $bookings = Booking::where('user_id',auth()->user()->id)->get();
+        // dd($bookings);
 
-        $guard = Booking::where('user_id',auth()->user()->id)->get();
-        return view('frontend.content.profile', compact('guard'));
+        // dd($bookings);
+                        if($bookings ->count() != 0){
+                            $sub_total=0;
+                            foreach($bookings as $booking)
+                            
+                            {
+                               
+                                $sub_total +=  $booking->total;
+                               
+                            }
+                            // dd($sub_total);
+                    
+                            // return view('frontend.partials.cart',compact('carts','sub_total'));
+                            return view('frontend.content.profile', compact('bookings','sub_total'));
+                        }else{
+                            $booking = [];
+                            $sub_total = 0;
+                            return view('frontend.content.profile', compact('bookings','sub_total'));
+                        }
+        // $guard = Booking::where('user_id',auth()->user()->id)->get();
+        // return view('frontend.content.profile', compact('guard'));
     }
 }

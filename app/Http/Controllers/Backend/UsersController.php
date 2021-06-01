@@ -29,10 +29,10 @@ class UsersController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if(auth()->user()->role == 'user'){
-                //auth()->logout();
-                return redirect()->route('homepage');
-            }
+            // if(auth()->user()->role == 'user'){
+            //     //auth()->logout();
+            //     return redirect()->route('homepage');
+            // }
             return redirect()->route('dashboard');
         }
         return back()->withErrors([

@@ -10,7 +10,7 @@
             <div class="card bg-success text-white shadow" style="width: 15rem;height:10rem;">
                 <div class="card-body">
                     <h5> <small>Total Availble Guard</small></h5>
-                    <h1>5000</h1>
+                    <h1>{{$guards}}</h1>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="card bg-primary text-white shadow" style="width: 15rem;height:10rem;">
                 <div class="card-body">
                     <h5> <small>Total Active client</small> </h5>
-                   <h1>20</h1>
+                   <h1>{{$clients}}</h1>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="card bg-secondary text-white shadow" style="width: 15rem;height:10rem;">
                 <div class="card-body">
                     <h5> <small>Total</small> </h5>
-                    <h1>200</h1>
+                    <h1>{{ $totals }}</h1>
                 </div>
             </div>
         </div>

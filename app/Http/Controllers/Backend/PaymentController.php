@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Payment;
@@ -13,20 +14,20 @@ class PaymentController extends Controller
     {   
         $title='Payment';
         $payment=Payment::all();
+        // dd($payment);
+        
         return view ("backend.content.payment",compact('title','payment'));
     } 
 
 
-    public function create(Request $request)
+    public function statusUpdate($id)
     {
-       Payment::create([
-            'user_id'=>auth()->user()->id,
-            'phone_number'=>$request->phone_number,
-        'payment_method'=>$request->payment_method,
-            'transaction_id'=>$request->transaction_id,
-            'amount'=>$request->amount
+      $booking = Booking::find($id);
 
-        ]);
+      $booking->update([
+
+        'status'=>'Paid',
+      ]);
 
         return redirect()->back();
     }

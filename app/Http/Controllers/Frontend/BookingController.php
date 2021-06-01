@@ -18,6 +18,12 @@ class BookingController extends Controller
 
         return view('frontend.content.guard-show', compact('guard'));
     }
+    public function showGuardBooking($id)
+    {
+        $guard = Guard::find($id);
+
+        return view('frontend.content.single-guard', compact('guard'));
+    }
 
 
 
@@ -43,6 +49,9 @@ class BookingController extends Controller
             if ($checkAvailable->count() == 0) {
                 // $daysCalculate=strtotime($request->to_date)-strtotime($request->from_date);
                 // $daysCalculate=round($daysCalculate / (60 * 60 * 24));
+
+            
+
               $add=  Booking::create([
                     'guard_id' => $request->guard_id,
                     'user_id' => auth()->user()->id,
@@ -53,7 +62,7 @@ class BookingController extends Controller
                     'total' => $request->salary * $mon_diff * -1,
                 ]);
                 Mail::to(auth()->user()->email)->send(new confirmationmail($add));
-                return redirect()->route('payment.guard', $request->guard_id)->with('success', 'Booking created Successfully');
+                return redirect()->route('homepage')->with('success', 'Booking created Successfully');
             } else {
                 return redirect()->route('show.guard', $request->guard_id)->with('success', 'Already Booked.');
             }

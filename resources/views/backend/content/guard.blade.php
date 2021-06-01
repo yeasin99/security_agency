@@ -51,6 +51,12 @@
       <label for="exampleInputDescription"> Age</label>
       <input name="age" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter Your Email Address">
     </div>
+
+    <div class="form-group">
+      <label for="exampleInputDescription"> Experience</label>
+      <input name="experience" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter guard experience">
+    </div>
+
     <div class="form-group">
       <label for="exampleInputDescription"> Salary</label>
       <input name="salary" type="number" class="form-control" id="exampleInputDescription" placeholder="Enter guard salary">
@@ -126,6 +132,7 @@
           <th scope="col">NID</th>
           <th scope="col">Email</th>
           <th scope="col">Age</th>
+          <th scope="col">Experience</th>
           <th scope="col">Salary</th>
           <th scope="col">Category</th>
           <th scope="col">Image</th>
@@ -144,6 +151,7 @@
         <td>{{$data->nid}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->age}}</td>
+        <td>{{$data->experience}}</td>
         <td>{{$data->salary}}</td>
         <td>{{$data->category_id}}</td>
         <td>

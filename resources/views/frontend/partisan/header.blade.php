@@ -20,7 +20,7 @@
                @endforeach
             </div>
           </div>
-
+        
           @auth()
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,8 +28,9 @@
            {{-- {{auth()->user()->name}} --}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{route('profile.show')}}">Profile</a>
-             <a class="dropdown-item" href="{{route('logout')}}"> Logout</a>
+              <a class="dropdown-item" href="{{route('profile.show')}}"><i class="fas fa-user-alt ms-5"></i></a>
+             <a class="dropdown-item" href="{{route('logout')}}"> <i class="fas fa-sign-out-alt ms-5"></i></a>
+             <a class="dropdown-item" href="#"> <i class="fas fa-cart-plus ms-5"></i></a>
 
 
             </div>
