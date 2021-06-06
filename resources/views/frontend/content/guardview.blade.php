@@ -6,12 +6,18 @@
     {{ session()->get('success') }}
 </div>
 @endif
+<div class=" alert-warning bg-warning alert-dismissible" role="alert" >
+  <button  type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close btn btn-info" data-dismiss="alert">Not Interested</button>
+  <strong><i class="fa fa-warning"></i> </strong> 
+  <marquee>
+  <p style="font-family: Impact; font-size: 18pt">Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor!</p>
+  </marquee>
+</div>
+
+@include('frontend.content.carosol');
 
 
-
-
-
-   
+   <section class="bg">
   <section class=" text-center container bg-clear">
     <div class="row ">
       <div class="col-lg-6 col-md-8 mx-auto">
@@ -22,7 +28,7 @@
     </div>
   </section>
 
-  <div style="padding: 100px" class="album py-5 bg-clear">
+  <div  class="album py-5 bg-clear">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -30,8 +36,8 @@
 
           @foreach ($guard as $data )
           <div class="col " >
-              <div class="card shadow-sm" >
-                <img style=" height:350px; width:350px" src="{{url('files/photo/'.$data->image)}}" alt="Product Image" >
+              <div class="card  cardDesign " >
+                <img src="{{url('files/photo/'.$data->image)}}" alt="Product Image" style="height: 250px" >
                 <div class="card-body">
                   <p class="card-text fs-5 fw-bolder text-dark">{{$data->name}}</p>
                   <p class="text-muted fw-bolder"> Age : {{$data->age}} </p>
@@ -76,6 +82,7 @@
       </div>
       </div>
   </div>
+   </section>
 
-
+@include('frontend.content.footerdesign');
 @endsection

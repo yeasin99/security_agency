@@ -27,7 +27,7 @@
 
 
 <div class="row d-flex align-items-center">
-    <h2  class ="text-center" style="font-family: 'Pattaya', sans-serif; color:rgb(47, 179, 231);">Secuirity Agency Management User Login</h2>
+    <h2  class ="text-center" style="font-family: 'Pattaya', sans-serif; color:rgb(173, 47, 231);padding-top:30px">Secuirity Agency Management<br> User-Login</h2>
     <div class="col-md-5 ">
         <img src="https://thumbs.dreamstime.com/b/vector-cartoon-security-guard-policeman-police-guard-dog-vector-cartoon-security-guard-policeman-police-guard-dog-129643771.jpg" class="img-fluid w-100 mx-5" alt="">
     </div>

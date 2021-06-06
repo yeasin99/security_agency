@@ -79,7 +79,7 @@ Register
       <th scope="col">Contact</th>
       <th scope="col">NID</th>
       <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      {{-- <th scope="col">Action</th> --}}
       
     </tr>
   </thead>

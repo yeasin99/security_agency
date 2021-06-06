@@ -19,6 +19,7 @@
     {{-- style.css --}}
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/sidebar.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/layout.css">
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.css" rel="stylesheet">

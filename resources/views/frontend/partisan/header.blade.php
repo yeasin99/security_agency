@@ -29,9 +29,11 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="{{route('profile.show')}}">Profile<i class="fas fa-user-alt ms-5"></i></a>
-             <a class="dropdown-item" href="{{route('logout')}}">Log Out <i class="fas fa-sign-out-alt ms-5"></i></a>
-             
+              <a class="dropdown-item" href="{{route('bookings.show')}}">Bookings <i class="fas fa-sign-out-alt ms-5"></i></a>
 
+              <a class="dropdown-item" href="{{route('logout')}}">Log Out <i class="fas fa-sign-out-alt ms-5"></i></a>
+             
+             
 
             </div>
           </li>

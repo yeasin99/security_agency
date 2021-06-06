@@ -14,30 +14,30 @@ class PaymentControllerF extends Controller
         $p_info = Booking::with(['orderUser'])->first();
 
         $bookings = Booking::where('user_id',auth()->user()->id)->get();
-        // dd($bookings);
 
-        // dd($bookings);
-                        if($bookings ->count() != 0){
-                            $sub_total=0;
-                            foreach($bookings as $booking)
+        $sub_total = Booking::where('user_id',auth()->user()->id)->where('status','Pending')->sum('total');
+    
+                        // if($bookings ->count() != 0){
+                        //     $sub_total=0;
+                        //     foreach($bookings as $booking)
                             
-                            {
+                        //     {
                                
-                                $sub_total +=  $booking->total;
+                        //         $sub_total +=  $booking->total;
                                
-                            }
+                        //     }
                             // dd($sub_total);
                     
                             // return view('frontend.partials.cart',compact('carts','sub_total'));
-                            // return view('frontend.content.profile', compact('bookings','sub_total'));
-                            return view('frontend.content.payment', compact('p_info','sub_total'));
-                        }else{
-                            $booking = [];
-                            $sub_total = 0;
-                            return view('frontend.content.payment', compact('p_info','sub_total'));
-                        }
+                        //     // return view('frontend.content.profile', compact('bookings','sub_total'));
+                        //     return view('frontend.content.payment', compact('p_info','sub_total'));
+                        // }else{
+                        //     $booking = [];
+                        //     $sub_total = 0;
+                        //     return view('frontend.content.payment', compact('p_info','sub_total'));
+                        // }
         // dd($p_info);
-        return view('frontend.content.payment', compact('p_info'));
+        return view('frontend.content.payment', compact('p_info','sub_total'));
     }
 
     public function payPayment (Request $request)

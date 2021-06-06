@@ -1,0 +1,7 @@
+
+.cardD{
+    transition: 0.5s;
+    }
+    .cardD:hover{
+        transform: scale(1.1);
+    }

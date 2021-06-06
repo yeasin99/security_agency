@@ -3,15 +3,14 @@
 @section('content')
 
 
-
+<section class="bg">
 <div class="album py-5 bg-light">
     <div class="container">
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 @foreach($guards as $data)
 <div class="col " >
-    <div class="card shadow-sm" >
-      <img style=" height:350px; width:350px" src="{{url('files/photo/'.$data->image)}}" alt="Product Image" >
+    <div class="card cardDesign" >
+      <img style="250px" src="{{url('files/photo/'.$data->image)}}" alt="Product Image" >
       <div class="card-body">
         <p class="card-text fs-5 fw-bolder text-dark">{{$data->name}}</p>
         <p class="text-muted fw-bolder"> Age  {{$data->age}} </p>
@@ -32,6 +31,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 

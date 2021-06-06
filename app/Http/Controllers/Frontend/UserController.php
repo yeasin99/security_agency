@@ -46,7 +46,7 @@ class UserController extends Controller
          ]);
          Mail::to($user->email)->send(new confirmationmail2($add));
 
-        return redirect()->back()->with('success','User Registration Successful.');
+        return redirect()->route('login.registration.form')->with('success','User Registration Successful.');
 
     }
 

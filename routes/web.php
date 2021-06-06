@@ -84,6 +84,10 @@ Route::get('carts',[CartController::class,'cart'])->name('carts');
 
     // profile
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.show');
+
+    Route::get('/booking/guard', [ProfileController::class, 'showBookings'])->name('bookings.show');
+
+
 });
 
 

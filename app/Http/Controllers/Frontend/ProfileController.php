@@ -10,7 +10,11 @@ class ProfileController extends Controller
 {
     public function showProfile()
     {
-        $bookings = Booking::where('user_id',auth()->user()->id)->get();
+        return view('frontend.content.profile');
+    }
+    public function showBookings()
+    {
+        $bookings = Booking::where('user_id',auth()->user()->id)->where('status','Pending')->get();
         // dd($bookings);
 
         // dd($bookings);
@@ -26,11 +30,11 @@ class ProfileController extends Controller
                             // dd($sub_total);
                     
                             // return view('frontend.partials.cart',compact('carts','sub_total'));
-                            return view('frontend.content.profile', compact('bookings','sub_total'));
+                            return view('frontend.content.booking', compact('bookings','sub_total'));
                         }else{
                             $booking = [];
                             $sub_total = 0;
-                            return view('frontend.content.profile', compact('bookings','sub_total'));
+                            return view('frontend.content.booking', compact('bookings','sub_total'));
                         }
         // $guard = Booking::where('user_id',auth()->user()->id)->get();
         // return view('frontend.content.profile', compact('guard'));

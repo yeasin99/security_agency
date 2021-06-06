@@ -22,15 +22,18 @@ class PaymentController extends Controller
 
     public function statusUpdate($id)
     {
-      $booking = Booking::find($id);
+      $bookings = Booking::where('status','pending')->get();
+      // dd(
+      // $booking);
 
+      foreach($bookings as $booking){
       $booking->update([
 
         'status'=>'Paid',
       ]);
 
-      
-      $payment = Payment::where('booking_id',$id)->first();
+    }
+      $payment = Payment::where('booking_id',$id)->latest();
       // dd( $payment);
 
       $payment->update([
@@ -43,15 +46,17 @@ class PaymentController extends Controller
 
     public function statusCancel($id)
     {
-      $booking = Booking::find($id);
+      $bookings = Booking::where('status','pending')->get();
 
+      foreach($bookings as $booking){
       $booking->update([
 
         'status'=>'Canceled',
       ]);
+      }
 
       
-      $payment = Payment::where('booking_id',$id)->first();
+      $payment = Payment::where('booking_id',$id)->latest();
       // dd( $payment);
 
       $payment->update([
