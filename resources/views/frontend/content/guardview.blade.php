@@ -7,17 +7,21 @@
 </div>
 @endif
 <div class=" alert-warning bg-warning alert-dismissible" role="alert" >
-  <button  type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close btn btn-info" data-dismiss="alert">Not Interested</button>
-  <strong><i class="fa fa-warning"></i> </strong> 
+  {{-- <button  type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close btn btn-info" data-dismiss="alert">Not Interested</button> --}}
+  {{-- <strong><i class="fa fa-warning"></i> </strong>  --}}
   <marquee>
-  <p style="font-family: Impact; font-size: 18pt">Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor!</p>
+    <h5>Looking For experiened Security Guard for your house or Office?</h5>
+    <p>You are in right place</p>
   </marquee>
 </div>
 
 @include('frontend.content.carosol');
 
+<div>
 
-   <section class="bg">
+  <h1  class="fw-bolder text-dark" style="text-align: center">Choose Guard From Here....</h1>
+</div>
+<section class="bg">
   <section class=" text-center container bg-clear">
     <div class="row ">
       <div class="col-lg-6 col-md-8 mx-auto">

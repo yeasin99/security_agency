@@ -7,6 +7,8 @@ use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Payment;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PaymentConfirmationMail;
 
 class PaymentController extends Controller
 {
@@ -40,7 +42,7 @@ class PaymentController extends Controller
 
         'status'=>'Paid',
       ]);
-
+      Mail::to(auth()->user()->email)->send(new PaymentConfirmationMail($payment));
         return redirect()->back();
     }
 
