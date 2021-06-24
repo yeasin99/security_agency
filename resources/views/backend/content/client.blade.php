@@ -3,20 +3,15 @@
 @section('content')
 
 
-<!-- Button trigger modal -->
-{{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-Register
-</button> --}}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Registred Client List</h1>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      {{-- <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add information</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div> --}}
-
+      
       <form method="post" action={{route('client.create')}}>
 
         @csrf

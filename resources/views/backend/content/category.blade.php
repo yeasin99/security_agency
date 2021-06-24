@@ -1,6 +1,9 @@
 @extends('backend.master')
 
 @section('content')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom text-center">
+  <h1 class="text-center">Categories</h1>
+</div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -53,8 +56,8 @@
 
 
   <table class="table">
-    <thead>
-      <tr>
+    <thead >
+      <tr >
         <th scope="col">Serial</th>
         <th scope="col">Name</th>
         <th scope="col">Details</th>

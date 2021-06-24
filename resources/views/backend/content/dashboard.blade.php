@@ -18,7 +18,7 @@
             <div class="card bg-warning text-white shadow" style="width: 15rem; height:10rem">
                 <div class="card-body">
                     <h5> <small>Total Active Employee </small> </h5>
-                    <h1>1000</h1>
+                    <h1>{{$guards+1}}</h1>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="col-md-3 ">
             <div class="card bg-secondary text-white shadow" style="width: 15rem;height:10rem;">
                 <div class="card-body">
-                    <h5> <small>Total</small> </h5>
+                    <h5> <small>Total Payment </small> </h5>
                     <h1>{{ $totals }}</h1>
                 </div>
             </div>

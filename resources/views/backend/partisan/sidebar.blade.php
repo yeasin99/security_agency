@@ -11,13 +11,13 @@
               </a>
             </li>
             
-            </li>
+            {{-- </li>
             <li class="nav-item p-2">
               <a class="nav-link active text-white" href="{{route('admin')}}">
                 <span data-feather="bar-chart-2"></span>
                 Admin
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item p-2">
               <a class="nav-link active text-white" href="{{route('client')}}">
                 <span data-feather="layers"></span>

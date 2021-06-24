@@ -46,8 +46,10 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/login', [UsersController::class, 'login'])->name('login');
 Route::post('/do-login', [UsersController::class, 'doLogin'])->name('admin.doLogin');
 
+Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
+
 Route::group(['middleware' => 'customer-auth'], function () {
-    Route::get('/homepage', [HomePageController::class, 'homepage'])->name('homepage');
+    
 
 
     // Route::post('/payment', [PaymentController::class, 'create'])->name('payment.create');
@@ -94,7 +96,7 @@ Route::get('carts',[CartController::class,'cart'])->name('carts');
 Route::group(['middleware' => 'admin'], function () {
 
     
-    Route::get('/', function () {
+    Route::get('/home', function () {
         return view('backend.master');
     });
 

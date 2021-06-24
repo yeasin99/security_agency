@@ -1,10 +1,12 @@
 @extends('frontend.master')
 
 @section('content')
+<div style="background-image: url(https://wallpaperaccess.com/full/1876824.jpg);min-height:100vh;background-repeat:no-repeat;background-size:cover">
+  <h1 class="text-center">Your Booking</h1>
 <div class="container">
     <table class="table">
-     <thead>
-       <tr class="fw-bolder" style="color:black">
+     <thead class="bg-dark">
+       <tr class="fw-bolder" style="color:rgb(253, 252, 252)">
          <th scope="col">Serial</th>
          <th scope="col">Guard ID</th>
          <th scope="col">User ID</th>
@@ -15,7 +17,7 @@
          
        </tr>
      </thead>
-     <tbody>
+     <tbody class="table-striped">
              @foreach ($bookings as $key=>$data )
  
  
@@ -42,12 +44,15 @@
      </tbody>
    </table>
 
-   <div >
-     <a class="btn btn-primary " href="{{route('userPayment')}}">Payment</a>
+   <div class="text-center">
+     <a class="btn btn-primary" href="{{route('userPayment')}}">Payment</a>
    </div>
     
 
 
  
  </div>
+</div>
+
  @endsection
+ {{-- linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), --}}

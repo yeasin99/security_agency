@@ -53,14 +53,14 @@
                                             <div class="form-group card-label">
                                                 <label for="card_number">Client Name: </label>
                                                 <input class="form-control"  id="name" value="{{ $p_info->orderUser->name }}" readonly type="text">
-                                                {{-- value="{{ $t_info->patient->name }}" --}}
+                                              
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group card-label">
                                                 <label for="expiry_month">Amount: </label>
                                                 <input class="form-control" name="visit" id="expiry_month"  value="{{ $sub_total }}" readonly type="decimal">
-                                                {{-- value="{{ $t_info->doctor->visit_fee }}" --}}
+                                             
                                             </div>
                                         </div>
 

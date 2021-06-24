@@ -1,4 +1,4 @@
-@extends('frontend.master')
+{{-- @extends('frontend.master')
 
 @section('content')
 
@@ -56,4 +56,4 @@
     </div>
     </form>
 
-@endsection
+@endsection --}}
